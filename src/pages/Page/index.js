@@ -4,11 +4,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import { replaceSpecialChars } from '../../functions';
 
-import { PageTitle } from '../../components/Titles';
-import { ImageCard } from '../../components/Cards';
-import { LatestPostsSection } from '../../components/Sections';
-import { PopularPostsAside } from '../../components/Aside';
-import { PaginationStyled } from '../../components/Pagination';
+import { PageTitle } from '../../components/atoms';
+import { ImageCard } from '../../components/molecules';
+import { LatestPostsSection } from '../../components/organisms';
+import { PopularPostsAside } from '../../components/organisms';
+import { PaginationStyled } from '../../components/molecules';
 
 import Default from '../../assets/img/default.jpg';
 

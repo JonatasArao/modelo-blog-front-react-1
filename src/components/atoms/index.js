@@ -1,3 +1,3 @@
 // Atoms
-export { PageTitle, PopularPostsTitle, LatestPostsTitle } from './atoms/Title';
-export { Button, PrimaryButton, AsideButton } from './atoms/Button';
+export { PageTitle, PopularPostsTitle, LatestPostsTitle } from './Title';
+export { Button, PrimaryButton, AsideButton } from './Button';

@@ -4,9 +4,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import { replaceSpecialChars } from '../../functions';
 
-import { PopularPostsSection } from '../../components/Sections';
-import { LatestPostsTransparentAside } from '../../components/Aside';
-import { PaginationStyled } from '../../components/Pagination';
+import { PopularPostsSection } from '../../components/organisms';
+import { LatestPostsTransparentAside } from '../../components/organisms';
+import { PaginationStyled } from '../../components/molecules';
 
 import Default from '../../assets/img/default.jpg';
 import UserDefault from '../../assets/img/user.png';

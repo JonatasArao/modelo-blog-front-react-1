@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { PageTitle } from '../../components/Titles';
-import { HorizontalCard } from '../../components/Cards';
-import { PaginationStyled } from '../../components/Pagination';
+import { PageTitle } from '../../components/atoms';
+import { HorizontalCard } from '../../components/molecules';
+import { PaginationStyled } from '../../components/molecules';
 
 import Default from '../../assets/img/default.jpg';
 

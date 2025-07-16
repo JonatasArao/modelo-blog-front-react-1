@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
-import { HorizontalCard } from '../../components/Cards'
-import { LatestPostsTitle } from '../../components/Titles'
-import { PopularPostsAside } from '../../components/Aside';
-import { PaginationStyled } from '../../components/Pagination';
+import { HorizontalCard } from '../../components/molecules'
+import { LatestPostsTitle } from '../../components/atoms'
+import { PopularPostsAside } from '../../components/organisms';
+import { PaginationStyled } from '../../components/molecules';
 
 import Default from '../../assets/img/default.jpg';
 
