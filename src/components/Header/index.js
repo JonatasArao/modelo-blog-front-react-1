@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Navbar, Nav, InputGroup } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa'
 
 import { NavbarStyled, NavLinkStyled, SearchStyled, FormControlSearch } from './styles';
@@ -9,14 +9,14 @@ export default function Header({ logo, blogName, pages }) {
   return (
     <NavbarStyled variant="dark" expand="lg">
         <Container>
-            <Navbar.Brand as={Link} to={process.env.PUBLIC_URL + '/'} > <img src={logo} alt={blogName} height="40px"/> </Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" > <img src={logo} alt={blogName} height="40px"/> </Navbar.Brand>
             <Navbar.Toggle aria-controls="headerNavbarText" />
             <Navbar.Collapse id="headerNavbarText">
               <Search mobile />
               <Nav as="ul" className="ml-auto px-3">
                 {pages.map(({id, url, name}) => (
                   <li key={id} className="px-3 py-2">
-                    <NavLinkStyled as={Link} to={url} className="py-2">{name}</NavLinkStyled>
+                    <NavLinkStyled as={Link} to={`/p/${id}`} className="py-2">{name}</NavLinkStyled>
                   </li>
                 ))}
               </Nav>
@@ -27,13 +27,13 @@ export default function Header({ logo, blogName, pages }) {
   );
   
   function Search({ desktop , mobile }){
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const [query, setQuery] = useState();
 
     function Submit(e){
         if(query !== ''){
-          history.push(`${process.env.PUBLIC_URL}/s/${query}`);
+          navigate(`/s/${query}`);
         }
         e.preventDefault();
     }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { replaceSpecialChars } from '../../functions';
 
@@ -13,10 +13,10 @@ import { PaginationStyled } from '../../components/Pagination';
 import Default from '../../assets/img/default.jpg';
 
 export default function Page() {
-    const history = useHistory();
+    const navigate = useNavigate();
     const { id, page } = useParams();
     if(isNaN(parseInt(id))){
-        history.push(`${process.env.PUBLIC_URL}/`);
+        navigate("/");
     }
     const titlePage = 'Página ' + id;
     const actualPage = replaceSpecialChars(titlePage).toLowerCase();
@@ -98,7 +98,7 @@ export default function Page() {
                             <PaginationStyled.Item>{2}</PaginationStyled.Item>
                             <PaginationStyled.Item>{3}</PaginationStyled.Item>
 
-                            <PaginationStyled.Next>Próximo > </PaginationStyled.Next>
+                            <PaginationStyled.Next>Próximo &gt;</PaginationStyled.Next>
                         </PaginationStyled>
                     </Row>
                 </Col>

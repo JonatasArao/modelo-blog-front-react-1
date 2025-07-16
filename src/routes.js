@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Index from './pages/Index';
 import Page from './pages/Page';
@@ -13,7 +13,7 @@ import { FooterNav } from './components/Footer';
 
 import logo from './assets/img/Logo.png';
 
-export default function Routes() {
+export default function AppRoutes() {
     const [headerPages, setHeaderPages] = useState([]);
 
     useEffect(() => {
@@ -22,10 +22,11 @@ export default function Routes() {
         temp.push({
           id: i,
           name: `Página ${i}`,
-          url: `${process.env.PUBLIC_URL}/p/${i}`
+          url: `${import.meta.env.BASE_URL}p/${i}`
         });
+      }
       setHeaderPages(temp)
-    }},[]);
+    },[]);
   
     const [footerPages, setFooterPages] = useState([]);
     useEffect(() => {
@@ -33,17 +34,17 @@ export default function Routes() {
         {
           id: 1,
           name: `Últimas novidades`,
-          url: process.env.PUBLIC_URL + '/latestposts'
+          url: import.meta.env.BASE_URL + 'latestposts'
         },
         {
           id: 2,
           name: `Populares`,
-          url: process.env.PUBLIC_URL + '/popularposts'
+          url: import.meta.env.BASE_URL + 'popularposts'
         },
         {
           id: 3,
           name: `Contato`,
-          url: process.env.PUBLIC_URL + '/contact'
+          url: import.meta.env.BASE_URL + 'contact'
         }
       ];
       setFooterPages(temp);
@@ -52,15 +53,15 @@ export default function Routes() {
     return(
         <BrowserRouter>
             <Header logo={logo} blogName="Design Teste" pages={headerPages} />
-            <Switch>
-                <Route path={process.env.PUBLIC_URL + '/'} exact component={Index} />
-                <Route path={process.env.PUBLIC_URL + '/p/:id/:page?'} component={Page} />
-                <Route path={process.env.PUBLIC_URL + '/a/:id/:author?'} component={Author} />
-                <Route path={process.env.PUBLIC_URL + '/s/:query'} component={Search} />
-                <Route path={process.env.PUBLIC_URL + '/popularposts'} component={PopularLatestPosts} />
-                <Route path={process.env.PUBLIC_URL + '/latestposts'} component={PopularLatestPosts} />
-                <Route path={process.env.PUBLIC_URL + '/contact'} component={Contact} />
-            </Switch>
+            <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/p/:id/:page?" element={<Page />} />
+                <Route path="/a/:id/:author?" element={<Author />} />
+                <Route path="/s/:query" element={<Search />} />
+                <Route path="/popularposts" element={<PopularLatestPosts />} />
+                <Route path="/latestposts" element={<PopularLatestPosts />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
             <FooterNav logo={logo} blogName="Design Teste" blogDescription="Descrição do Blog" pages={footerPages}/>
         </BrowserRouter>
     );

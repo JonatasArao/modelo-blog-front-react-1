@@ -83,7 +83,7 @@ export default function Search() {
                             <PaginationStyled.Item>{2}</PaginationStyled.Item>
                             <PaginationStyled.Item>{3}</PaginationStyled.Item>
 
-                            <PaginationStyled.Next>Próximo > </PaginationStyled.Next>
+                            <PaginationStyled.Next>Próximo &gt;</PaginationStyled.Next>
                         </PaginationStyled>
                     </Row>
                 </Col>
