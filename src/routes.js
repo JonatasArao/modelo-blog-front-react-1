@@ -8,8 +8,8 @@ import Search from './pages/Search';
 import PopularLatestPosts from './pages/PopularLatestPosts';
 import Contact from './pages/Contact';
 
-import Header from './components/Header';
-import { FooterNav } from './components/Footer';
+import { Header } from './components/organisms';
+import { FooterNav } from './components/organisms';
 
 import logo from './assets/img/Logo.png';
 

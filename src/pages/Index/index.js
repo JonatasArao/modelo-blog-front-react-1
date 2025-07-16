@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { ImageCard } from '../../components/Cards';
-import { PopularPostsSection } from '../../components/Sections';
-import { LatestPostsAside } from '../../components/Aside';
-import { FooterDescriptionElement } from '../../components/Footer';
+import { ImageCard } from '../../components/molecules';
+import { PopularPostsSection } from '../../components/organisms';
+import { LatestPostsAside } from '../../components/organisms';
+import { FooterDescriptionElement } from '../../components/organisms';
 
 import Default from '../../assets/img/default.jpg';
 import logo from '../../assets/img/Logo.png';
@@ -21,7 +21,7 @@ export default function Index() {
         page: `Página ${(i%4) + 1}`,
         title: 'Título da Matéria',
         imgSrc: Default,
-        url: process.env.PUBLIC_URL + '/'
+        url: "/"
       });
     }
     setIndexCard(temp);
@@ -36,7 +36,7 @@ export default function Index() {
         page: `Página ${(i%4) + 1}`,
         title: 'Título da Matéria',
         description: 'Descrição da Matéria',
-        url: process.env.PUBLIC_URL + '/',
+        url: "/",
         imgSrc: Default
       });
     }
@@ -52,7 +52,7 @@ export default function Index() {
         page: `Página ${(i%4) + 1}`,
         title: 'Título da Matéria',
         description: 'Descrição da Matéria',
-        url: process.env.PUBLIC_URL + '/',
+        url: "/",
         imgSrc: Default
       });
     }
